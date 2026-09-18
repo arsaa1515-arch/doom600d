@@ -1,0 +1,35 @@
+name: Build Doom for 600D
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: patch-1
+
+      - name: Install ARM GCC Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi build-essential
+
+      - name: Clone Magic Lantern SDK
+        run: |
+          git clone --depth 1 https://foss.heptapod.net/magic-lantern/magic-lantern.git ../magic-lantern
+
+      - name: Build module
+        run: |
+          make
+
+      - name: Upload compiled module
+        uses: actions/upload-artifact@v4
+        with:
+          name: doom-600d-module
+          path: |
+            *.mo
+            module/*.mo
