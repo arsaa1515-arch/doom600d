@@ -1159,14 +1159,16 @@ static struct menu_entry doom550d_menu[] =
  * MODULE_KEY_UNPRESS_UDLR. Op de 550D bestaan echter vier afzonderlijke
  * raw events; daarmee kunnen we echte hold/release-besturing maken.
  */
-#define DOOM_BGMT_PRESS_RIGHT    0x1a
-#define DOOM_BGMT_UNPRESS_RIGHT  0x1b
-#define DOOM_BGMT_PRESS_LEFT     0x1c
-#define DOOM_BGMT_UNPRESS_LEFT   0x1d
-#define DOOM_BGMT_PRESS_UP       0x1e
-#define DOOM_BGMT_UNPRESS_UP     0x1f
-#define DOOM_BGMT_PRESS_DOWN     0x20
-#define DOOM_BGMT_UNPRESS_DOWN   0x21
+/* Canon EOS 600D raw button codes */
+#define DOOM_BGMT_PRESS_RIGHT    0x1c
+#define DOOM_BGMT_UNPRESS_RIGHT  0x1d
+#define DOOM_BGMT_PRESS_LEFT     0x1e
+#define DOOM_BGMT_UNPRESS_LEFT   0x1f
+#define DOOM_BGMT_PRESS_UP       0x20
+#define DOOM_BGMT_UNPRESS_UP     0x21
+#define DOOM_BGMT_PRESS_DOWN     0x22
+#define DOOM_BGMT_UNPRESS_DOWN   0x23
+
 #define DOOM_BGMT_WHEEL_LEFT       0x02
 #define DOOM_BGMT_WHEEL_RIGHT      0x03
 #define DOOM_BGMT_PRESS_SET        0x04
